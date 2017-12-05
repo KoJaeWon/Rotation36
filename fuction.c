@@ -57,7 +57,7 @@ void blockswap(char *str, int d, int n)
 	}
 }
 
-void reverse(char *str1, int d, int n) {
+void reverse(char *str1, int a, int b) {
         char temp;
         for (int i = 0; i < (b - a) / 2; i++) {
                 temp = str1[a + i];
@@ -66,7 +66,7 @@ void reverse(char *str1, int d, int n) {
                 str1[b - i] = temp;
         }
 }
-void reversal(char *str1) {
+void reversal(char *str1,int d,int n) {
         reverse(str1, 0, d - 1);
         reverse(str1, d, n - 1);
         reverse(str1, 0, n - 1);
