@@ -18,6 +18,7 @@ clock-->>     고재원
 printhead-->> 김혜리
 printresult-->>송민준
 header--> 송민준
+main-->이지호
 
 
 이중 하나 골라서 만들어 주시면 됩니다.
