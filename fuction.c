@@ -36,7 +36,15 @@ void juggle(char *jug, int d, int n) {
 	jug[n] = '\0';
 	free(temp);
 }
-
+void swap(char *str1, int i1, int i2, int d) {
+	char temp;
+	for (int i = 0; i<d; i++)
+	{
+		temp = str1[i1 + i];
+		str1[i1 + i] = str1[i2 + i];
+		str1[i2 + i] = temp;
+	}
+}
 void blockswap(char *str, int d, int n) 
 {	
 	if (d == 0 || d == n)
@@ -65,7 +73,7 @@ void reverse(char *str1, int a, int b) {
                 str1[b - i] = temp;
         }
 }
-void reversal(char *str1) {
+void reversal(char *str1,int d,int n) {
         reverse(str1, 0, d - 1);
         reverse(str1, d, n - 1);
         reverse(str1, 0, n - 1);
