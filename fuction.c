@@ -13,7 +13,7 @@ int gendata() {
 	}
 }
 
-void trivial(char*tri) {
+void trivial(char*tri,int d,int n) {
 	char c;
 	for (int count = 0; count<d; count++) {
 		for (int i = 0; i < n - 1; i++) {
@@ -24,7 +24,7 @@ void trivial(char*tri) {
 	}
 }
 
-void juggle(char *jug) {
+void juggle(char *jug,int d,int n) {
 	char *temp = (char*)malloc(sizeof(char)*(d + 1));
 	int count = 0;
 	strncpy(temp, jug, d);
