@@ -36,6 +36,15 @@ void juggle(char *jug) {
 	jug[n] = '\0';
 	free(temp);
 }
+void swap(char *str1, int i1, int i2, int d) {
+	char temp;
+	for (int i = 0; i<d; i++)
+	{
+		temp = str1[i1 + i];
+		str1[i1 + i] = str1[i2 + i];
+		str1[i2 + i] = temp;
+	}
+}
 
 void blockswap(char *str, int d, int n) 
 {	
