@@ -1,4 +1,4 @@
-int gendata(int* n, int* d) {
+int gendata(int* d, int* n) {
 	if (scanf("%d", &n) == EOF) {
 		return 0;
 	}
@@ -36,15 +36,8 @@ void juggle(char *jug, int d, int n) {
 	jug[n] = '\0';
 	free(temp);
 }
-void swap(char *str1, int i1, int i2, int d) {
-	char temp;
-	for (int i = 0; i<d; i++)
-	{
-		temp = str1[i1 + i];
-		str1[i1 + i] = str1[i2 + i];
-		str1[i2 + i] = temp;
-	}
-}
+
+
 void blockswap(char *str, int d, int n) 
 {	
 	if (d == 0 || d == n)
@@ -64,7 +57,7 @@ void blockswap(char *str, int d, int n)
 	}
 }
 
-void reverse(char *str1, int a, int b) {
+void reverse(char *str1, int d, int n) {
         char temp;
         for (int i = 0; i < (b - a) / 2; i++) {
                 temp = str1[a + i];
@@ -73,7 +66,7 @@ void reverse(char *str1, int a, int b) {
                 str1[b - i] = temp;
         }
 }
-void reversal(char *str1,int d,int n) {
+void reversal(char *str1) {
         reverse(str1, 0, d - 1);
         reverse(str1, d, n - 1);
         reverse(str1, 0, n - 1);
@@ -91,6 +84,15 @@ double Time(void* func,int d, int n){
 }
 
 
+double Time(void* func,int d, int n){
+    time_t start, end;
+    char* str = (char*)malloc(sizeof(char)*(n+1));
+    void (*Funcptr) = func;
+    start=clock();
+            Funcptr(str,d,n);
+    end = clock();
+            return (double)(end-start);
+}
 
 
 void printhead() 
