@@ -79,6 +79,17 @@ void reversal(char *str1,int d,int n) {
         reverse(str1, 0, n - 1);
 
 }
+double Time(void* func,int d, int n){
+    time_t start, end;
+    char* str = (char*)malloc(sizeof(char)*(n+1));
+    void (*Funcptr) = func;
+    start=clock();
+            Funcptr(str,n,d);
+    end = clock();
+	free(str);
+            return (double)(end-start);
+}
+
 
 
 
@@ -86,7 +97,7 @@ void printhead()
 {		
 	printf("StrLength\tRotateDistance\tT.trivial\tT.juggle\tT.bw\t\tT.reverse\t\n");
 }
-void printresult(int n, int d){
+void printresult(int d, int n){
 	
 	printf("%d\t\t%d\t\t%lf\t%lf\t%lf\t%lf\n", n, d, time1, time2, time3, time4);
 }
