@@ -16,6 +16,6 @@ void juggle(char *jug,int n,int d);
 void swap(char *str1, int i1, int i2, int d);
 void blockswap(char *str, int d, int n);
 void reverse(char *str1, int a, int b);
-void reversal(char *str1);
+void reversal(char *str1,int d,int n);
 void printhead();
 void printresult();
